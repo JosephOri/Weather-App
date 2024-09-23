@@ -3,7 +3,7 @@ import InputLocationForm from "../../components/InputLocationForm";
 
 const HomePage = () => {
   return (
-    <Box className="flex justify-center bg-gradient-to-t">
+    <Box className="flex justify-center">
       <InputLocationForm />
     </Box>
   );
