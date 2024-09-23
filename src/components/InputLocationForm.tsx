@@ -1,8 +1,5 @@
-
 const InputLocationForm = () => {
-  return (
-    <div>InputLocationForm</div>
-  )
-}
+  return <h1>Input location form</h1>;
+};
 
-export default InputLocationForm
+export default InputLocationForm;
