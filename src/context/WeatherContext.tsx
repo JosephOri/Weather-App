@@ -1,6 +1,5 @@
 import React, { createContext, useState } from "react";
 import { InputMethod } from "../types/InputMethod";
-import { ContextDevTool } from "react-context-devtool";
 
 export interface WeatherContextType {
   inputMethod: InputMethod;
