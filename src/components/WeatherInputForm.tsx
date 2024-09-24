@@ -40,17 +40,17 @@ const WeatherInputForm = () => {
           <FormControlLabel
             value="cityName"
             control={<Radio />}
-            label="City Name"
+            label="By City name"
           />
           <FormControlLabel
             value="coordinates"
             control={<Radio />}
-            label="Coordinates"
+            label="By coordinates"
           />
           <FormControlLabel
             value="currentLocation"
             control={<Radio />}
-            label="Use Current Location"
+            label="Use my Current Location"
           />
         </RadioGroup>
       </FormControl>

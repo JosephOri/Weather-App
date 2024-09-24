@@ -1,15 +1,14 @@
 import React, { createContext, useState } from "react";
 import { InputMethod } from "../types/InputMethod";
+import { Coordinates, EmptyCoordinates } from "../types/Coordinates";
 
 export interface WeatherContextType {
   inputMethod: InputMethod;
   setInputMethod: (method: InputMethod) => void;
   cityName: string;
   setCityName: (name: string) => void;
-  latitude: string;
-  setLatitude: (lat: string) => void;
-  longitude: string;
-  setLongitude: (lon: string) => void;
+  coordinates: Coordinates;
+  setCoordinates: (coordinates: Coordinates) => void;
 }
 
 export const WeatherContext = createContext<WeatherContextType | undefined>(
@@ -21,8 +20,7 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [inputMethod, setInputMethod] = useState<InputMethod>("cityName");
   const [cityName, setCityName] = useState("");
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
+  const [coordinates, setCoordinates] = useState<Coordinates>(EmptyCoordinates);
 
   return (
     <WeatherContext.Provider
@@ -31,10 +29,8 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
         setInputMethod,
         cityName,
         setCityName,
-        latitude,
-        setLatitude,
-        longitude,
-        setLongitude,
+        coordinates,
+        setCoordinates,
       }}
     >
       {children}
