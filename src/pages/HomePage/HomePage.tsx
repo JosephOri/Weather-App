@@ -1,11 +1,14 @@
 import { Box } from "@mui/material";
-import InputLocationForm from "../../components/InputLocationForm";
+import WeatherInputForm from "../../components/WeatherInputForm";
+import { WeatherProvider } from "../../context/WeatherContext";
 
 const HomePage = () => {
   return (
-    <Box className="flex justify-center">
-      <InputLocationForm />
-    </Box>
+    <WeatherProvider>
+      <Box className="flex justify-center">
+        <WeatherInputForm />
+      </Box>
+    </WeatherProvider>
   );
 };
 
