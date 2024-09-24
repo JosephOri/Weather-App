@@ -29,7 +29,7 @@ const WeatherInputForm = () => {
     >
       <FormControl component="fieldset" fullWidth>
         <Typography variant="h6" gutterBottom>
-          Select Input Method
+          How would you like to get the weather?
         </Typography>
         <RadioGroup
           aria-label="input-method"
