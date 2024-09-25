@@ -1,25 +1,19 @@
-import { Box, TextField, Button } from "@mui/material";
+import { TextField } from "@mui/material";
 import useWeatherContext from "../../hooks/useWeatherContext";
 
 const CityNameInput = () => {
   const { cityName, setCityName } = useWeatherContext();
 
   return (
-    <Box mt={2}>
-      <TextField
-        label="City Name"
-        variant="outlined"
-        fullWidth
-        placeholder="Enter city name"
-        value={cityName}
-        onChange={(e) => setCityName(e.target.value)}
-      />
-      <Box className="mt-4">
-        <Button variant="contained" color="primary" fullWidth>
-          Get Weather
-        </Button>
-      </Box>
-    </Box>
+    <TextField
+      label="City Name"
+      variant="outlined"
+      size="small"
+      fullWidth
+      placeholder="Enter city name"
+      value={cityName}
+      onChange={(e) => setCityName(e.target.value)}
+    />
   );
 };
 

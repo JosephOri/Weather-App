@@ -1,12 +1,7 @@
-
-import { Box, Typography } from '@mui/material';
+import { Typography } from "@mui/material";
 
 const CurrentLocationMessage = () => (
-  <Box mt={2}>
-    <Typography variant="body1">
-      The application will use your current location.
-    </Typography>
-  </Box>
+  <Typography className="text-gray-600">Using your current location</Typography>
 );
 
 export default CurrentLocationMessage;
