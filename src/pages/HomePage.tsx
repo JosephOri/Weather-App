@@ -3,7 +3,7 @@ import WeatherInputForm from "../components/WeatherInputForm";
 
 const HomePage = () => {
   return (
-    <Box>
+    <Box className="flex flex-col">
       <WeatherInputForm />
     </Box>
   );

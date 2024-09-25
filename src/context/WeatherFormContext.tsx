@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 import { InputMethod } from "../types/InputMethod";
 import { Coordinates, EmptyCoordinates } from "../types/Coordinates";
 
-export interface WeatherContextType {
+export interface WeatherFormContextType {
   inputMethod: InputMethod;
   setInputMethod: (method: InputMethod) => void;
   cityName: string;
@@ -11,9 +11,9 @@ export interface WeatherContextType {
   setCoordinates: (coordinates: Coordinates) => void;
 }
 
-export const WeatherFormContext = createContext<WeatherContextType | undefined>(
-  undefined
-);
+export const WeatherFormContext = createContext<
+  WeatherFormContextType | undefined
+>(undefined);
 
 export const WeatherFromProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
