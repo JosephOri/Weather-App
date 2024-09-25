@@ -6,12 +6,11 @@ import {
   RadioGroup,
   Radio,
   Typography,
-  Button,
 } from "@mui/material";
 import { InputMethod } from "../types/InputMethod";
-import CityNameInput from "./CityNameInput";
-import CoordinatesInput from "./CoordinatesInput";
-import CurrentLocationMessage from "./CurrentLocationMessage";
+import CityNameInput from "./InputOptions/CityNameInput";
+import CoordinatesInput from "./InputOptions/CoordinatesInput";
+import CurrentLocationMessage from "./InputOptions/CurrentLocationMessage";
 
 const WeatherInputForm = () => {
   const { inputMethod, setInputMethod } = useWeatherContext();
@@ -58,12 +57,6 @@ const WeatherInputForm = () => {
       {inputMethod === "cityName" && <CityNameInput />}
       {inputMethod === "coordinates" && <CoordinatesInput />}
       {inputMethod === "currentLocation" && <CurrentLocationMessage />}
-
-      <Box mt={4}>
-        <Button variant="contained" color="primary" fullWidth>
-          Get Weather
-        </Button>
-      </Box>
     </Box>
   );
 };
