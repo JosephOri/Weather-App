@@ -1,13 +1,13 @@
-import { Box, Grid, TextField } from "@mui/material";
-import useWeatherContext from "../hooks/useWeatherContext";
+import { Box, TextField, Button } from "@mui/material";
+import useWeatherContext from "../../hooks/useWeatherContext";
 
 const CoordinatesInput = () => {
   const { coordinates, setCoordinates } = useWeatherContext();
 
   return (
-    <Box mt={2}>
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
+    <Box className="mt-4">
+      <Box className="flex space-x-4">
+        <Box className="w-1/2">
           <TextField
             label="Latitude"
             variant="outlined"
@@ -22,8 +22,8 @@ const CoordinatesInput = () => {
               })
             }
           />
-        </Grid>
-        <Grid item xs={6}>
+        </Box>
+        <Box className="w-1/2">
           <TextField
             label="Longitude"
             variant="outlined"
@@ -38,8 +38,13 @@ const CoordinatesInput = () => {
               })
             }
           />
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
+      <Box className="mt-4">
+        <Button variant="contained" color="primary" fullWidth>
+          Get Weather
+        </Button>
+      </Box>
     </Box>
   );
 };
