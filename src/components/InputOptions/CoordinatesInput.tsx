@@ -1,8 +1,8 @@
 import { Box, TextField } from "@mui/material";
-import useWeatherContext from "../../hooks/useWeatherContext";
+import useWeatherFormContext from "../../hooks/useWeatherContext";
 
 const CoordinatesInput = () => {
-  const { coordinates, setCoordinates } = useWeatherContext();
+  const { coordinates, setCoordinates } = useWeatherFormContext();
 
   return (
     <Box className="flex space-x-2 w-full">

@@ -1,8 +1,8 @@
 import { TextField } from "@mui/material";
-import useWeatherContext from "../../hooks/useWeatherContext";
+import useWeatherFormContext from "../../hooks/useWeatherContext";
 
 const CityNameInput = () => {
-  const { cityName, setCityName } = useWeatherContext();
+  const { cityName, setCityName } = useWeatherFormContext();
 
   return (
     <TextField

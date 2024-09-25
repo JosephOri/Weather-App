@@ -1,4 +1,4 @@
-import useWeatherContext from "../hooks/useWeatherContext";
+import useWeatherFormContext from "../hooks/useWeatherContext";
 import {
   Box,
   FormControl,
@@ -13,7 +13,7 @@ import CoordinatesInput from "./InputOptions/CoordinatesInput";
 import CurrentLocationMessage from "./InputOptions/CurrentLocationMessage";
 
 const WeatherInputForm = () => {
-  const { inputMethod, setInputMethod } = useWeatherContext();
+  const { inputMethod, setInputMethod } = useWeatherFormContext();
 
   return (
     <Box className="w-full p-4">

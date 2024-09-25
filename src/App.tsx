@@ -2,14 +2,14 @@ import { ThemeProvider } from "@mui/material";
 import React from "react";
 import { basicTheme } from "./theme/basicTheme";
 import HomePage from "./pages/HomePage";
-import { WeatherProvider } from "./context/WeatherContext";
+import { WeatherFromProvider } from "./context/WeatherFormContext";
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={basicTheme}>
-      <WeatherProvider>
+      <WeatherFromProvider>
         <HomePage />
-      </WeatherProvider>
+      </WeatherFromProvider>
     </ThemeProvider>
   );
 };
