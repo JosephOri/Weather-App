@@ -1,9 +1,6 @@
 export type Coordinates = {
-  latitude: number | null;
-  longitude: number | null;
+  latitude?: number;
+  longitude?: number;
 };
 
-export const EmptyCoordinates: Coordinates = {
-  latitude: null,
-  longitude: null,
-};
+export const EmptyCoordinates: Coordinates = {};

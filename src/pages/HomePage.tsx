@@ -3,7 +3,7 @@ import WeatherInputForm from "../components/WeatherInputForm";
 
 const HomePage = () => {
   return (
-    <Box className="flex justify-center">
+    <Box>
       <WeatherInputForm />
     </Box>
   );
