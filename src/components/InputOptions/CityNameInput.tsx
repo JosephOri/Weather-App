@@ -6,6 +6,7 @@ import { WeatherInputProps } from "./types/WeatherInputProps";
 
 const CityNameInput = ({ onSearch }: WeatherInputProps) => {
   const { cityName, setCityName } = useWeatherFormContext();
+
   const onCitySearch = () => {
     if (!cityName.trim()) {
       toast.error("Please enter a city name.");
