@@ -1,11 +1,20 @@
 import { Box, TextField } from "@mui/material";
+import { toast } from "react-toastify";
 import useWeatherFormContext from "../../hooks/useWeatherFromContext";
+import SearchButton from "./SearchButton";
+import { WeatherInputProps } from "./types/WeatherInputProps";
 
-const CoordinatesInput = () => {
+const CoordinatesInput = ({ onSearch }: WeatherInputProps) => {
   const { coordinates, setCoordinates } = useWeatherFormContext();
-
+  const onCoordinatesSearch = async () => {
+    if (!coordinates.lat || !coordinates.long) {
+      toast.error("Please enter both latitude and longitude.");
+      return;
+    }
+    onSearch();
+  };
   return (
-    <Box className="flex space-x-2 w-full">
+    <Box className="flex space-x-4 w-full">
       <TextField
         label="Latitude"
         variant="outlined"
@@ -36,6 +45,9 @@ const CoordinatesInput = () => {
         }
         fullWidth
       />
+      <Box className="flex-grow">
+        <SearchButton onSearch={onCoordinatesSearch} />
+      </Box>
     </Box>
   );
 };

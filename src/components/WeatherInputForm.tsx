@@ -1,17 +1,9 @@
 import useWeatherFormContext from "../hooks/useWeatherFromContext";
-import {
-  Box,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  Button,
-} from "@mui/material";
+import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { InputMethod } from "../types/InputMethod";
 import CityNameInput from "./InputOptions/CityNameInput";
 import CoordinatesInput from "./InputOptions/CoordinatesInput";
 import CurrentLocationMessage from "./InputOptions/CurrentLocationMessage";
-
 
 interface WeatherInputFormProps {
   onSearch: () => void;
@@ -38,12 +30,13 @@ const WeatherInputForm: React.FC<WeatherInputFormProps> = ({ onSearch }) => {
           </Select>
         </FormControl>
 
-        {inputMethod === "cityName" && <CityNameInput />}
-        {inputMethod === "coordinates" && <CoordinatesInput />}
-        {inputMethod === "currentLocation" && <CurrentLocationMessage />}
-        <Button variant="contained" color="primary" size="medium" onClick={onSearch}>
-          search
-        </Button>
+        {inputMethod === "cityName" && <CityNameInput onSearch={onSearch} />}
+        {inputMethod === "coordinates" && (
+          <CoordinatesInput onSearch={onSearch} />
+        )}
+        {inputMethod === "currentLocation" && (
+          <CurrentLocationMessage onSearch={onSearch} />
+        )}
       </Box>
     </Box>
   );
