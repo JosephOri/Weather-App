@@ -5,11 +5,7 @@ import CityNameInput from "./InputOptions/CityNameInput";
 import CoordinatesInput from "./InputOptions/CoordinatesInput";
 import CurrentLocationMessage from "./InputOptions/CurrentLocationMessage";
 
-interface WeatherInputFormProps {
-  onSearch: () => void;
-}
-
-const WeatherInputForm: React.FC<WeatherInputFormProps> = ({ onSearch }) => {
+const WeatherInputForm: React.FC = () => {
   const { inputMethod, setInputMethod } = useWeatherFormContext();
 
   return (
@@ -30,13 +26,9 @@ const WeatherInputForm: React.FC<WeatherInputFormProps> = ({ onSearch }) => {
           </Select>
         </FormControl>
 
-        {inputMethod === "cityName" && <CityNameInput onSearch={onSearch} />}
-        {inputMethod === "coordinates" && (
-          <CoordinatesInput onSearch={onSearch} />
-        )}
-        {inputMethod === "currentLocation" && (
-          <CurrentLocationMessage onSearch={onSearch} />
-        )}
+        {inputMethod === "cityName" && <CityNameInput />}
+        {inputMethod === "coordinates" && <CoordinatesInput />}
+        {inputMethod === "currentLocation" && <CurrentLocationMessage />}
       </Box>
     </Box>
   );

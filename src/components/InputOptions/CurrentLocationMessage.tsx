@@ -1,12 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import SearchButton from "./SearchButton";
-import { WeatherInputProps } from "./types/WeatherInputProps";
 import useWeatherFormContext from "../../hooks/useWeatherFromContext";
 import { Coordinates } from "../../types/Coordinates";
 import { getCurrentLocation } from "../../utils/getCurrentLocation";
 import { toast } from "react-toastify";
 
-const CurrentLocationMessage = ({ onSearch }: WeatherInputProps) => {
+const CurrentLocationMessage = () => {
   const { setCoordinates } = useWeatherFormContext();
   const onLocationSearch = async () => {
     try {
@@ -16,7 +15,6 @@ const CurrentLocationMessage = ({ onSearch }: WeatherInputProps) => {
       toast.error("Unable to retrieve current location.");
       return;
     }
-    onSearch();
   };
   return (
     <Box className="flex items-center space-x-2">

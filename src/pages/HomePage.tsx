@@ -5,9 +5,10 @@ import { useWeatherData } from "../hooks/useWeatherData";
 import WeatherDisplay from "../components/WeatherDisplay ";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useWeatherFormContext from "../hooks/useWeatherFromContext";
 
 const HomePage = () => {
-  const [shouldFetch, setShouldFetch] = useState(false);
+  const { shouldFetch, setShouldFetch } = useWeatherFormContext();
 
   const { data: weatherData, isLoading, isError, refetch } = useWeatherData();
 
@@ -20,7 +21,7 @@ const HomePage = () => {
       refetch();
       setShouldFetch(false);
     }
-  }, [shouldFetch, refetch]);
+  }, [shouldFetch, setShouldFetch, refetch]);
 
   return (
     <Box className="flex flex-col">

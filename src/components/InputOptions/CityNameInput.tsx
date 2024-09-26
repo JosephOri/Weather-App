@@ -2,9 +2,8 @@ import { TextField, Box } from "@mui/material";
 import { toast } from "react-toastify";
 import useWeatherFormContext from "../../hooks/useWeatherFromContext";
 import SearchButton from "./SearchButton";
-import { WeatherInputProps } from "./types/WeatherInputProps";
 
-const CityNameInput = ({ onSearch }: WeatherInputProps) => {
+const CityNameInput = () => {
   const { cityName, setCityName } = useWeatherFormContext();
 
   const onCitySearch = () => {
@@ -12,7 +11,6 @@ const CityNameInput = ({ onSearch }: WeatherInputProps) => {
       toast.error("Please enter a city name.");
       return;
     }
-    onSearch();
   };
 
   return (

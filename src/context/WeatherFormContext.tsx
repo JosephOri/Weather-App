@@ -9,6 +9,8 @@ export interface WeatherFormContextType {
   setCityName: (name: string) => void;
   coordinates: Coordinates;
   setCoordinates: (coordinates: Coordinates) => void;
+  shouldFetch: boolean;
+  setShouldFetch: (shouldFetch: boolean) => void;
 }
 
 export const WeatherFormContext = createContext<
@@ -21,6 +23,7 @@ export const WeatherFromProvider: React.FC<{ children: React.ReactNode }> = ({
   const [inputMethod, setInputMethod] = useState<InputMethod>("cityName");
   const [cityName, setCityName] = useState("");
   const [coordinates, setCoordinates] = useState<Coordinates>(EmptyCoordinates);
+  const [shouldFetch, setShouldFetch] = useState(false);
 
   return (
     <WeatherFormContext.Provider
@@ -31,6 +34,8 @@ export const WeatherFromProvider: React.FC<{ children: React.ReactNode }> = ({
         setCityName,
         coordinates,
         setCoordinates,
+        shouldFetch,
+        setShouldFetch,
       }}
     >
       {children}
