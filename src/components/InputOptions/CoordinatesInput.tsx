@@ -12,11 +12,11 @@ const CoordinatesInput = () => {
         size="small"
         type="number"
         placeholder="e.g., 37.7749"
-        value={coordinates.latitude ?? ""}
+        value={coordinates.lat ?? ""}
         onChange={(e) =>
           setCoordinates({
-            latitude: parseFloat(e.target.value),
-            longitude: coordinates.longitude,
+            lat: parseFloat(e.target.value),
+            long: coordinates.long,
           })
         }
         fullWidth
@@ -27,11 +27,11 @@ const CoordinatesInput = () => {
         size="small"
         type="number"
         placeholder="e.g., -122.4194"
-        value={coordinates.longitude ?? ""}
+        value={coordinates.long ?? ""}
         onChange={(e) =>
           setCoordinates({
-            latitude: coordinates.latitude,
-            longitude: parseFloat(e.target.value),
+            lat: coordinates.lat,
+            long: parseFloat(e.target.value),
           })
         }
         fullWidth

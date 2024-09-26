@@ -1,6 +1,6 @@
 export type Coordinates = {
-  latitude?: number;
-  longitude?: number;
+  lat?: number;
+  long?: number;
 };
 
 export const EmptyCoordinates: Coordinates = {};
