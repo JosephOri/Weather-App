@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import WeatherInputForm from "../components/WeatherInputForm";
 import { useWeatherData } from "../hooks/useWeatherData";
@@ -17,7 +17,6 @@ const HomePage = () => {
   const { data: weatherData, isLoading, isError, refetch } = useWeatherData();
 
   const handleSearch = async () => {
-    
     if (inputMethod === "cityName" && !cityName.trim()) {
       toast.error("Please enter a city name.");
       return;
