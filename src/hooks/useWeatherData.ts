@@ -4,25 +4,20 @@ import useWeatherFormContext from "./useWeatherFromContext";
 
 export const useWeatherData = () => {
   const { inputMethod, cityName, coordinates } = useWeatherFormContext();
-  let queryKeySuffix = "";
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
+  const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+  let url = "";
 
   const fetchWeather = async () => {
-    if (inputMethod === "cityName") {
-      queryKeySuffix = cityName;
-      return getWeatherData(cityName);
-    } else if (inputMethod === "coordinates") {
-      queryKeySuffix = `${coordinates.lat},${coordinates.long}`;
-      return getWeatherData(coordinates);
-    } else if (inputMethod === "currentLocation") {
-      queryKeySuffix = `${coordinates.lat},${coordinates.long}`;
-      return getWeatherData(coordinates);
-    } else {
-      throw new Error("Invalid input method");
-    }
+    url =
+      inputMethod === "cityName"
+        ? `${baseUrl}/weather?q=${cityName}&appid=${apiKey}&units=metric`
+        : `${baseUrl}/weather?lat=${coordinates.lat}&lon=${coordinates.long}&appid=${apiKey}&units=metric`;
+    return getWeatherData(url);
   };
 
   return useQuery({
-    queryKey: ["weatherData", inputMethod, queryKeySuffix],
+    queryKey: ["weatherData", url],
     queryFn: fetchWeather,
     enabled: false,
   });
