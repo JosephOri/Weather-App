@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import WeatherInputForm from "../components/WeatherInputForm";
 import { useWeatherData } from "../hooks/useWeatherData";
 import useWeatherFormContext from "../hooks/useWeatherFromContext";
 import WeatherDisplay from "../components/WeatherDisplay ";
 import { getCurrentLocation } from "../utils/getCurrentLocation";
+import { Coordinates } from "../types/Coordinates";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const HomePage = () => {
   const [shouldFetch, setShouldFetch] = useState(false);
@@ -14,24 +17,25 @@ const HomePage = () => {
   const { data: weatherData, isLoading, isError, refetch } = useWeatherData();
 
   const handleSearch = async () => {
-    if (inputMethod === "cityName" && cityName.trim() === "") {
-      alert("Please enter a city name.");
+    
+    if (inputMethod === "cityName" && !cityName.trim()) {
+      toast.error("Please enter a city name.");
       return;
     }
 
     if (inputMethod === "coordinates") {
       if (coordinates.lat === undefined || coordinates.long === undefined) {
-        alert("Please enter valid coordinates.");
+        toast.error("Please enter valid coordinates.");
         return;
       }
     }
 
     if (inputMethod === "currentLocation") {
       try {
-        const currentCoords = await getCurrentLocation();
+        const currentCoords: Coordinates = await getCurrentLocation();
         setCoordinates(currentCoords);
       } catch (error) {
-        alert("Unable to retrieve current location.");
+        toast.error("Unable to retrieve current location.");
         return;
       }
     }
@@ -39,7 +43,7 @@ const HomePage = () => {
     setShouldFetch(true);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (shouldFetch) {
       refetch();
       setShouldFetch(false);
@@ -51,7 +55,8 @@ const HomePage = () => {
       <WeatherInputForm onSearch={handleSearch} />
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error fetching weather data.</p>}
-      {weatherData && <WeatherDisplay data={weatherData} />}
+      {weatherData && <WeatherDisplay weatherData={weatherData} />}
+      <ToastContainer />
     </Box>
   );
 };

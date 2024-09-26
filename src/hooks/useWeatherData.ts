@@ -4,13 +4,17 @@ import useWeatherFormContext from "./useWeatherFromContext";
 
 export const useWeatherData = () => {
   const { inputMethod, cityName, coordinates } = useWeatherFormContext();
+  let queryKeySuffix = "";
 
   const fetchWeather = async () => {
     if (inputMethod === "cityName") {
+      queryKeySuffix = cityName;
       return getWeatherData(cityName);
     } else if (inputMethod === "coordinates") {
+      queryKeySuffix = `${coordinates.lat},${coordinates.long}`;
       return getWeatherData(coordinates);
     } else if (inputMethod === "currentLocation") {
+      queryKeySuffix = `${coordinates.lat},${coordinates.long}`;
       return getWeatherData(coordinates);
     } else {
       throw new Error("Invalid input method");
@@ -18,7 +22,7 @@ export const useWeatherData = () => {
   };
 
   return useQuery({
-    queryKey: ["weatherData", inputMethod, cityName, coordinates],
+    queryKey: ["weatherData", inputMethod, queryKeySuffix],
     queryFn: fetchWeather,
     enabled: false,
   });
