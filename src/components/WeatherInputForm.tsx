@@ -12,7 +12,12 @@ import CityNameInput from "./InputOptions/CityNameInput";
 import CoordinatesInput from "./InputOptions/CoordinatesInput";
 import CurrentLocationMessage from "./InputOptions/CurrentLocationMessage";
 
-const WeatherInputForm = () => {
+
+interface WeatherInputFormProps {
+  onSearch: () => void;
+}
+
+const WeatherInputForm: React.FC<WeatherInputFormProps> = ({ onSearch }) => {
   const { inputMethod, setInputMethod } = useWeatherFormContext();
 
   return (
@@ -36,7 +41,7 @@ const WeatherInputForm = () => {
         {inputMethod === "cityName" && <CityNameInput />}
         {inputMethod === "coordinates" && <CoordinatesInput />}
         {inputMethod === "currentLocation" && <CurrentLocationMessage />}
-        <Button variant="contained" color="primary" size="medium">
+        <Button variant="contained" color="primary" size="medium" onClick={onSearch}>
           search
         </Button>
       </Box>
