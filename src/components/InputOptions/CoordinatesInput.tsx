@@ -45,9 +45,9 @@ const CoordinatesInput = ({ onSearch }: WeatherInputProps) => {
         }
         fullWidth
       />
-      <Box className="flex-grow">
+      
         <SearchButton onSearch={onCoordinatesSearch} />
-      </Box>
+      
     </Box>
   );
 };

@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 
 interface SearchButtonProps {
   onSearch: () => void;
@@ -6,9 +6,11 @@ interface SearchButtonProps {
 
 const SearchButton = ({ onSearch }: SearchButtonProps) => {
   return (
-    <Button variant="contained" color="primary" onClick={onSearch}>
-      search
-    </Button>
+    <Box className="flex-grow">
+      <Button variant="contained" color="primary" onClick={onSearch}>
+        search
+      </Button>
+    </Box>
   );
 };
 
