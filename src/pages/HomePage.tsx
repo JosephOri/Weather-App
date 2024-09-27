@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Box } from "@mui/material";
 import WeatherInputForm from "../components/WeatherInputForm";
 import { useWeatherData } from "../hooks/useWeatherData";
@@ -12,10 +12,6 @@ const HomePage = () => {
 
   const { data: weatherData, isLoading, isError, refetch } = useWeatherData();
 
-  const handleSearch = async () => {
-    setShouldFetch(true);
-  };
-
   useEffect(() => {
     if (shouldFetch) {
       refetch();
@@ -25,7 +21,7 @@ const HomePage = () => {
 
   return (
     <Box className="flex flex-col">
-      <WeatherInputForm onSearch={handleSearch} />
+      <WeatherInputForm />
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error fetching weather data.</p>}
       {weatherData && <WeatherDisplay weatherData={weatherData} />}
