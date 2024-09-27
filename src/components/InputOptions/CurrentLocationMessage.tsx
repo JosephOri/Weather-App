@@ -11,9 +11,10 @@ const CurrentLocationMessage = () => {
     try {
       const currentCoords: Coordinates = await getCurrentLocation();
       setCoordinates(currentCoords);
+      return true;
     } catch (error) {
       toast.error("Unable to retrieve current location.");
-      return;
+      return false;
     }
   };
   return (
@@ -21,7 +22,7 @@ const CurrentLocationMessage = () => {
       <Typography className="text-gray-600">
         The application will use your current location
       </Typography>
-      <SearchButton onSearch={onLocationSearch} />
+      <SearchButton validateSearch={onLocationSearch} />
     </Box>
   );
 };

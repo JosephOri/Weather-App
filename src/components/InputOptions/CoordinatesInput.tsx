@@ -8,8 +8,9 @@ const CoordinatesInput = () => {
   const onCoordinatesSearch = async () => {
     if (!coordinates.lat || !coordinates.long) {
       toast.error("Please enter both latitude and longitude.");
-      return;
+      return false;
     }
+    return true;
   };
   return (
     <Box className="flex space-x-4 w-full">
@@ -43,7 +44,7 @@ const CoordinatesInput = () => {
         }
         fullWidth
       />
-      <SearchButton onSearch={onCoordinatesSearch} />
+      <SearchButton validateSearch={onCoordinatesSearch} />
     </Box>
   );
 };

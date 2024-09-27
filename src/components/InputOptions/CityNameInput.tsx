@@ -6,11 +6,13 @@ import SearchButton from "./SearchButton";
 const CityNameInput = () => {
   const { cityName, setCityName } = useWeatherFormContext();
 
-  const onCitySearch = () => {
+  const onCitySearch = async () => {
+    let isValid = true;
     if (!cityName.trim()) {
       toast.error("Please enter a city name.");
-      return;
+      isValid = false;
     }
+    return new Promise<boolean>((resolve) => resolve(isValid));
   };
 
   return (
@@ -24,7 +26,7 @@ const CityNameInput = () => {
         value={cityName}
         onChange={(e) => setCityName(e.target.value)}
       />
-      <SearchButton onSearch={onCitySearch} />
+      <SearchButton validateSearch={onCitySearch} />
     </Box>
   );
 };

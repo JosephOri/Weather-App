@@ -6,6 +6,8 @@ import WeatherDisplay from "../components/WeatherDisplay ";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useWeatherFormContext from "../hooks/useWeatherFromContext";
+import Loading from "../components/common/Loading";
+import Error from "../components/common/Error";
 
 const HomePage = () => {
   const { shouldFetch, setShouldFetch } = useWeatherFormContext();
@@ -22,8 +24,8 @@ const HomePage = () => {
   return (
     <Box className="flex flex-col">
       <WeatherInputForm />
-      {isLoading && <p>Loading...</p>}
-      {isError && <p>Error fetching weather data.</p>}
+      {isLoading && <Loading message="Fetching weather data..." />}
+      {isError && <Error message="Unable to fetch weather data." />}
       {weatherData && <WeatherDisplay weatherData={weatherData} />}
       <ToastContainer />
     </Box>
