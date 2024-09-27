@@ -1,9 +1,11 @@
-import useWeatherFormContext from "../hooks/useWeatherFromContext";
+import React from "react";
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import useWeatherFormContext from "../hooks/useWeatherFromContext";
 import { InputMethod } from "../types/InputMethod";
 import CityNameInput from "./InputOptions/CityNameInput";
 import CoordinatesInput from "./InputOptions/CoordinatesInput";
 import CurrentLocationMessage from "./InputOptions/CurrentLocationMessage";
+import ForecastDurationSelect from "./InputOptions/ForecastDurationSelect";
 
 const WeatherInputForm: React.FC = () => {
   const { inputMethod, setInputMethod } = useWeatherFormContext();
@@ -29,6 +31,8 @@ const WeatherInputForm: React.FC = () => {
         {inputMethod === "cityName" && <CityNameInput />}
         {inputMethod === "coordinates" && <CoordinatesInput />}
         {inputMethod === "currentLocation" && <CurrentLocationMessage />}
+
+        <ForecastDurationSelect />
       </Box>
     </Box>
   );

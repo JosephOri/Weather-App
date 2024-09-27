@@ -1,15 +1,23 @@
-import { ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
 import { basicTheme } from "./theme/basicTheme";
 import HomePage from "./pages/HomePage";
-import { WeatherFromProvider } from "./context/WeatherFormContext";
+import { WeatherFormProvider } from "./context/WeatherFormContext";
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={basicTheme}>
-      <WeatherFromProvider>
-        <HomePage />
-      </WeatherFromProvider>
+      <CssBaseline />
+      <WeatherFormProvider>
+        <div
+          style={{
+            backgroundColor: basicTheme.palette.background.default,
+            minHeight: "100vh",
+          }}
+        >
+          <HomePage />
+        </div>
+      </WeatherFormProvider>
     </ThemeProvider>
   );
 };
