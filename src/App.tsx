@@ -1,15 +1,15 @@
 import { ThemeProvider } from "@mui/material";
 import React from "react";
 import { basicTheme } from "./theme/basicTheme";
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
+import HomePage from "./pages/HomePage";
+import { WeatherFromProvider } from "./context/WeatherFormContext";
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={basicTheme}>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
+      <WeatherFromProvider>
+        <HomePage />
+      </WeatherFromProvider>
     </ThemeProvider>
   );
 };
