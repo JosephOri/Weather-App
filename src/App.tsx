@@ -12,7 +12,6 @@ const App: React.FC = () => {
         <div
           style={{
             backgroundColor: basicTheme.palette.background.default,
-            minHeight: "100vh",
           }}
         >
           <HomePage />
