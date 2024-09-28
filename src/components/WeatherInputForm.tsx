@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import useWeatherFormContext from "../hooks/useWeatherFromContext";
+import useWeatherFormContext from "../hooks/useWeatherFormContext";
 import CityNameInput from "./input-options/CityNameInput";
 import CoordinatesInput from "./input-options/CoordinatesInput";
 import CurrentLocationMessage from "./input-options/CurrentLocationMessage";

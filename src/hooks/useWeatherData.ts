@@ -1,15 +1,10 @@
-import useWeatherFormContext from "./useWeatherFromContext";
+import useWeatherFormContext from "./useWeatherFormContext";
 import { useQuery } from "@tanstack/react-query";
 import { getWeatherData } from "../api/weather.api";
 
 export const useWeatherData = () => {
-  const {
-    inputMethod,
-    cityName,
-    coordinates,
-    forecastDuration,
-    shouldFetch,
-  } = useWeatherFormContext();
+  const { inputMethod, cityName, coordinates, forecastDuration, shouldFetch } =
+    useWeatherFormContext();
 
   const fetchWeather = async () => {
     let params = {};

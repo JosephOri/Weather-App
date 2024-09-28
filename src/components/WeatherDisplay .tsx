@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Card, CardContent, Grid } from "@mui/material";
 import { WeatherResponse } from "../types/WeatherResponse";
 import { ForecastResponse } from "../types/ForecastResponse";
-import useWeatherFormContext from "../hooks/useWeatherFromContext";
+import useWeatherFormContext from "../hooks/useWeatherFormContext";
 interface WeatherDisplayProps {
   weatherData: WeatherResponse | ForecastResponse;
 }

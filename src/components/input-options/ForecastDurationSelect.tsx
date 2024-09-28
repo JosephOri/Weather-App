@@ -1,6 +1,6 @@
 import React from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import useWeatherFormContext from "../../hooks/useWeatherFromContext";
+import useWeatherFormContext from "../../hooks/useWeatherFormContext";
 import { ForecastDuration } from "../../types/ForecastDuration";
 
 const ForecastDurationSelect: React.FC = () => {
