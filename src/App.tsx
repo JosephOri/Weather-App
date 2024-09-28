@@ -1,21 +1,17 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
-import { basicTheme } from "./theme/basicTheme";
 import HomePage from "./pages/HomePage";
 import { WeatherFormProvider } from "./context/WeatherFormContext";
+import { lightTheme, darkTheme } from "./theme/themes";
+import { useThemeMode } from "./hooks/context/useThemeModeContexs";
 
 const App: React.FC = () => {
+  const { isDarkMode } = useThemeMode();
   return (
-    <ThemeProvider theme={basicTheme}>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
       <WeatherFormProvider>
-        <div
-          style={{
-            backgroundColor: basicTheme.palette.background.default,
-          }}
-        >
-          <HomePage />
-        </div>
+        <HomePage />
       </WeatherFormProvider>
     </ThemeProvider>
   );
