@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Box } from "@mui/material";
 import WeatherInputForm from "../components/WeatherInputForm";
 import { useWeatherData } from "../hooks/useWeatherData";
 import WeatherDisplay from "../components/WeatherDisplay ";
@@ -22,13 +21,13 @@ const HomePage = () => {
   }, [shouldFetch, setShouldFetch, refetch]);
 
   return (
-    <Box className="flex flex-col">
+    <>
       <WeatherInputForm />
       {isLoading && <Loading message="Fetching weather data..." />}
       {isError && <Error message="Unable to fetch weather data." />}
       {weatherData && <WeatherDisplay weatherData={weatherData} />}
       <ToastContainer />
-    </Box>
+    </>
   );
 };
 

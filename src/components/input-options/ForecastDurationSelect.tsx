@@ -7,7 +7,7 @@ const ForecastDurationSelect: React.FC = () => {
   const { forecastDuration, setForecastDuration } = useWeatherFormContext();
 
   return (
-    <FormControl variant="outlined" size="small" className="w-1/4">
+    <FormControl variant="outlined" size="small" className="w-full md:w-1/2">
       <InputLabel id="forecast-duration-label">Forecast</InputLabel>
       <Select
         labelId="forecast-duration-label"

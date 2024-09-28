@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import SearchButton from "./SearchButton";
 import useWeatherFormContext from "../../hooks/useWeatherFromContext";
 import { Coordinates } from "../../types/Coordinates";
@@ -18,12 +18,12 @@ const CurrentLocationMessage = () => {
     }
   };
   return (
-    <Box className="flex items-center space-x-2">
+    <>
       <Typography className="text-gray-600">
         The application will use your current location
       </Typography>
       <SearchButton validateSearch={onLocationSearch} />
-    </Box>
+    </>
   );
 };
 

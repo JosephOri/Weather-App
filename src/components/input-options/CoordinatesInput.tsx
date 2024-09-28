@@ -1,4 +1,4 @@
-import { Box, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { toast } from "react-toastify";
 import useWeatherFormContext from "../../hooks/useWeatherFromContext";
 import SearchButton from "./SearchButton";
@@ -13,7 +13,7 @@ const CoordinatesInput = () => {
     return true;
   };
   return (
-    <Box className="flex space-x-4 w-full">
+    <>
       <TextField
         label="Latitude"
         variant="outlined"
@@ -45,7 +45,7 @@ const CoordinatesInput = () => {
         fullWidth
       />
       <SearchButton validateSearch={onCoordinatesSearch} />
-    </Box>
+    </>
   );
 };
 

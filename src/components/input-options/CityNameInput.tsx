@@ -1,4 +1,4 @@
-import { TextField, Box } from "@mui/material";
+import { TextField } from "@mui/material";
 import { toast } from "react-toastify";
 import useWeatherFormContext from "../../hooks/useWeatherFromContext";
 import SearchButton from "./SearchButton";
@@ -16,7 +16,7 @@ const CityNameInput = () => {
   };
 
   return (
-    <Box className="flex space-x-2 w-full">
+    <>
       <TextField
         label="City Name"
         variant="outlined"
@@ -27,7 +27,7 @@ const CityNameInput = () => {
         onChange={(e) => setCityName(e.target.value)}
       />
       <SearchButton validateSearch={onCitySearch} />
-    </Box>
+    </>
   );
 };
 

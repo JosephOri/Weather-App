@@ -1,38 +1,24 @@
 import React from "react";
-import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Box } from "@mui/material";
 import useWeatherFormContext from "../hooks/useWeatherFromContext";
-import { InputMethod } from "../types/InputMethod";
 import CityNameInput from "./input-options/CityNameInput";
 import CoordinatesInput from "./input-options/CoordinatesInput";
 import CurrentLocationMessage from "./input-options/CurrentLocationMessage";
 import ForecastDurationSelect from "./input-options/ForecastDurationSelect";
+import InputMethodSelect from "./input-options/InputMethodSelect";
 
 const WeatherInputForm: React.FC = () => {
-  const { inputMethod, setInputMethod } = useWeatherFormContext();
-
+  const { inputMethod } = useWeatherFormContext();
   return (
     <Box className="w-full p-4">
-      <Box className="flex items-center space-x-4 max-w-4xl mx-auto">
-        <FormControl variant="outlined" size="small" className="w-1/4">
-          <InputLabel id="input-method-label">Search By</InputLabel>
-          <Select
-            labelId="input-method-label"
-            id="input-method"
-            value={inputMethod}
-            onChange={(e) => setInputMethod(e.target.value as InputMethod)}
-            label="Search By"
-          >
-            <MenuItem value="cityName">City Name</MenuItem>
-            <MenuItem value="coordinates">Coordinates</MenuItem>
-            <MenuItem value="currentLocation">Current Location</MenuItem>
-          </Select>
-        </FormControl>
-
-        {inputMethod === "cityName" && <CityNameInput />}
-        {inputMethod === "coordinates" && <CoordinatesInput />}
-        {inputMethod === "currentLocation" && <CurrentLocationMessage />}
-
+      <Box className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 max-w-4xl md:mx-auto">
+        <InputMethodSelect />
         <ForecastDurationSelect />
+        <Box className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 w-full">
+          {inputMethod === "cityName" && <CityNameInput />}
+          {inputMethod === "coordinates" && <CoordinatesInput />}
+          {inputMethod === "currentLocation" && <CurrentLocationMessage />}
+        </Box>
       </Box>
     </Box>
   );
