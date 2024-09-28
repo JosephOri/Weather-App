@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { WeatherFormContext } from "../context/WeatherFormContext";
-import { WeatherFormContextType } from "../context/WeatherFormContext";
+import { WeatherFormContext } from "../../context/WeatherFormContext";
+import { WeatherFormContextType } from "../../context/WeatherFormContext";
 
 function useWeatherFormContext(): WeatherFormContextType {
   const context = useContext(WeatherFormContext);

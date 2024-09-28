@@ -1,5 +1,5 @@
 import { Button, Box } from "@mui/material";
-import useWeatherFormContext from "../../hooks/useWeatherFormContext";
+import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
 
 interface SearchButtonProps {
   validateSearch: () => Promise<boolean>;

@@ -4,7 +4,7 @@ import { useWeatherData } from "../hooks/useWeatherData";
 import WeatherDisplay from "../components/WeatherDisplay ";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useWeatherFormContext from "../hooks/useWeatherFormContext";
+import useWeatherFormContext from "../hooks/context/useWeatherFormContext";
 import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
 

@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 import { toast } from "react-toastify";
-import useWeatherFormContext from "../../hooks/useWeatherFormContext";
+import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
 import SearchButton from "./SearchButton";
 
 const CityNameInput = () => {

@@ -1,4 +1,4 @@
-import useWeatherFormContext from "./useWeatherFormContext";
+import useWeatherFormContext from "./context/useWeatherFormContext";
 import { useQuery } from "@tanstack/react-query";
 import { getWeatherData } from "../api/weather.api";
 

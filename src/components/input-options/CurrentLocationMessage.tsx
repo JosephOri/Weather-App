@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import SearchButton from "./SearchButton";
-import useWeatherFormContext from "../../hooks/useWeatherFormContext";
+import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
 import { Coordinates } from "../../types/Coordinates";
 import { getCurrentLocation } from "../../utils/getCurrentLocation";
 import { toast } from "react-toastify";
