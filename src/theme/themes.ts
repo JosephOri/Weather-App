@@ -23,12 +23,8 @@ export const lightTheme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        html: {
-          height: "100%",
-        },
         body: {
           height: "100%",
-          minHeight: "100vh", 
           backgroundImage: `url(${lightBg})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -37,7 +33,7 @@ export const lightTheme = createTheme({
           background: `linear-gradient(to bottom, #f0f0f0, #38C8E6) no-repeat`,
         },
         "#root": {
-          height: "100%", 
+          height: "100%",
         },
       },
     },
