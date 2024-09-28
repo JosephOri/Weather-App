@@ -5,7 +5,7 @@ interface ThemeModeContextType {
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ThemeModeContext = createContext<ThemeModeContextType | undefined>(undefined);
+export const ThemeModeContext = createContext<ThemeModeContextType | undefined>(undefined);
 
 export const ThemeModeContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
