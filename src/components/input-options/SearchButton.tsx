@@ -14,7 +14,7 @@ const SearchButton = ({ validateSearch }: SearchButtonProps) => {
     }
   };
   return (
-    <Box className="flex-grow">
+    <Box className="flex-grow items-center">
       <Button variant="contained" color="primary" onClick={handleClick}>
         search
       </Button>

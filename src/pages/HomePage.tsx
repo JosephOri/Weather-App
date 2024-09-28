@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import useWeatherFormContext from "../hooks/context/useWeatherFormContext";
 import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
+import Header from "../components/Header";
 
 const HomePage = () => {
   const { shouldFetch, setShouldFetch } = useWeatherFormContext();
@@ -22,6 +23,7 @@ const HomePage = () => {
 
   return (
     <>
+      <Header />
       <WeatherInputForm />
       {isLoading && <Loading message="Fetching weather data..." />}
       {isError && <Error message="Unable to fetch weather data." />}
