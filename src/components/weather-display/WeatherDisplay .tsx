@@ -3,7 +3,7 @@ import { Box, Typography, Card, CardContent } from "@mui/material";
 import { WeatherResponse } from "../../types/WeatherResponse";
 import { ForecastResponse } from "../../types/ForecastResponse";
 import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
-import WeatherCard from "./WeatherCard";
+import WeatherCard from "./ForcastCard";
 
 interface WeatherDisplayProps {
   weatherData: WeatherResponse | ForecastResponse;
