@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { useThemeMode } from "../hooks/context/useThemeModeContexs";
+import { useThemeMode } from "../../hooks/context/useThemeModeContexs";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 const Header = () => {
@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Box className="flex justify-between items-center h-20">
       <Typography variant="h4" className="text-xl">
-        Weather App
+        Weather
       </Typography>
       <DarkModeToggle
         checked={isDarkMode}
