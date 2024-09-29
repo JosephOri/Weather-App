@@ -4,6 +4,6 @@ import {
 } from "../../context/WeatherDataContext";
 import { useAbstractContext } from "./useAbstractContext";
 
-export const useData = (): WeatherDataContextType => {
+export const useWeatherData = (): WeatherDataContextType => {
   return useAbstractContext(WeatherDataContext);
 };
