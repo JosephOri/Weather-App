@@ -14,11 +14,11 @@ const CurrentWeather = ({ weatherData }: CurrentWeatherProps) => {
       >
         <Box
           id="weather-status"
-          className="flex flex-col md:m-8 md:mx-6 md:w-[25rem]"
+          className="flex flex-col md:m-6 md:mx-4 md:w-[15rem]"
         >
           <Typography
             variant="h4"
-            className="font-semibold text-[1.25rem] text-[#396bae] mb-8"
+            className="font-semibold text-[1.25rem] text-[#396bae] md:mb-4"
           >
             {weatherData.name}
           </Typography>
@@ -26,7 +26,7 @@ const CurrentWeather = ({ weatherData }: CurrentWeatherProps) => {
             <img
               src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
               alt={weatherData.weather[0].description}
-              className=" sm:opacity-0 md:opacity-100"
+              className="w-16 h-16"
             />
             <span className="font-light text-[7rem] text-[#4a6fa1] ml-6 leading-none">
               <Typography variant="h3">
@@ -34,9 +34,6 @@ const CurrentWeather = ({ weatherData }: CurrentWeatherProps) => {
               </Typography>
             </span>
           </Box>
-          <Typography variant="h6">
-            {weatherData.weather[0].description}
-          </Typography>
         </Box>
 
         <Box

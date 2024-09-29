@@ -146,7 +146,18 @@ export const darkTheme = createTheme({
         },
       },
     },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "#7eaed2",
+          "&.Mui-focused": {
+            color: "#7eaed2",
+          },
+        },
+      },
+    },
   },
+
   typography: {
     h6: {
       color: "#2F5D8A",
