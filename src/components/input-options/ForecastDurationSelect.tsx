@@ -19,7 +19,7 @@ const ForecastDurationSelect = () => {
       >
         <MenuItem value="current">Current</MenuItem>
         <MenuItem value="3-day">3-Day</MenuItem>
-        <MenuItem value="5-day">5-Day</MenuItem>
+        <MenuItem value="7-day">7-Day</MenuItem>
       </Select>
     </FormControl>
   );
