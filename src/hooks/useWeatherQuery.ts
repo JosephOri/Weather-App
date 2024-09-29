@@ -32,5 +32,6 @@ export const useWeatherQuery = () => {
     queryKey: generateQueryKey(),
     queryFn: fetchWeather,
     enabled: false,
+    staleTime: 1000 * 60 * 5,
   });
 };
