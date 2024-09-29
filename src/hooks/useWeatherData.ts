@@ -16,14 +16,20 @@ export const useWeatherData = () => {
     return getWeatherData(params, forecastDuration);
   };
 
+  const generateQueryKey = () => {
+    const queryKey = [];
+    queryKey.push(inputMethod);
+    if (inputMethod === "cityName") {
+      queryKey.push(cityName);
+    } else {
+      queryKey.push(coordinates.lat, coordinates.long);
+    }
+    queryKey.push(forecastDuration);
+    return queryKey;
+  };
+
   return useQuery({
-    queryKey: [
-      "weatherData",
-      inputMethod,
-      cityName,
-      coordinates,
-      forecastDuration,
-    ],
+    queryKey: generateQueryKey(),
     queryFn: fetchWeather,
     enabled: shouldFetch,
   });
