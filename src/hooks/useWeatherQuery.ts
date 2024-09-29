@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getWeatherData } from "../api/weather.api";
 
 export const useWeatherQuery = () => {
-  const { inputMethod, cityName, coordinates, forecastDuration, shouldFetch } =
+  const { inputMethod, cityName, coordinates, forecastDuration } =
     useWeatherForm();
 
   const fetchWeather = async () => {
@@ -31,6 +31,6 @@ export const useWeatherQuery = () => {
   return useQuery({
     queryKey: generateQueryKey(),
     queryFn: fetchWeather,
-    enabled: shouldFetch,
+    enabled: false,
   });
 };

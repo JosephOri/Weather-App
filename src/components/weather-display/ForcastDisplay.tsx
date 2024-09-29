@@ -1,25 +1,24 @@
 import { Box, Typography } from "@mui/material";
-import WeatherCard from "./ForcastCard";
+import ForcastCard from "./ForcastCard";
 import { ForecastResponse } from "../../types/ForecastResponse";
+import { useWeatherData } from "../../hooks/context/useWeatherData";
 
-interface Props {
-  data: ForecastResponse;
-}
-
-const ForcastDisplay = ({ data }: Props) => {
+const ForcastDisplay = () => {
+  const { data } = useWeatherData();
+  const forecastData = data as ForecastResponse;
   return (
     <Box className="w-full">
       <Box className="mb-10">
         <Typography variant="h5" className="text-center font-semibold">
-          {data.city.name}, {data.city.country} - {data.list.length}-Day
-          Forecast
+          {forecastData.city.name}, {forecastData.city.country} -{" "}
+          {forecastData.list.length}-Day Forecast
         </Typography>
       </Box>
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 justify-center">
-        {data.list.map((day, index) => (
-          <WeatherCard day={day} key={index} />
+      <Box className="flex flex-wrap justify-center gap-1">
+        {forecastData.list.map((day, index) => (
+          <ForcastCard day={day} key={index} />
         ))}
-      </div>
+      </Box>
     </Box>
   );
 };

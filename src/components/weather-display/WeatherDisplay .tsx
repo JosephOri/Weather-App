@@ -1,24 +1,14 @@
 import { Box } from "@mui/material";
-import { WeatherResponse } from "../../types/WeatherResponse";
-import { ForecastResponse } from "../../types/ForecastResponse";
 import useWeatherForm from "../../hooks/context/useWeatherForm";
 import CurrentWeather from "./CurrentWeather";
 import ForcastDisplay from "./ForcastDisplay";
 
-interface Props {
-  weatherData: WeatherResponse | ForecastResponse;
-}
-
-const WeatherDisplay = ({ weatherData }: Props) => {
+const WeatherDisplay = () => {
   const { forecastDuration } = useWeatherForm();
 
   return (
-    <Box className="mt-4 flex justify-center">
-      {forecastDuration === "current" ? (
-        <CurrentWeather data={weatherData as WeatherResponse} />
-      ) : (
-        <ForcastDisplay data={weatherData as ForecastResponse} />
-      )}
+    <Box className="mt-10 flex flex-wrap justify-center">
+      {forecastDuration === "current" ? <CurrentWeather /> : <ForcastDisplay />}
     </Box>
   );
 };

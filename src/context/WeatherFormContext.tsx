@@ -9,8 +9,6 @@ export interface WeatherFormContextType {
   setCityName: (name: string) => void;
   coordinates: Coordinates;
   setCoordinates: (coordinates: Coordinates) => void;
-  shouldFetch: boolean;
-  setShouldFetch: (shouldFetch: boolean) => void;
   forecastDuration: ForecastDuration;
   setForecastDuration: (duration: ForecastDuration) => void;
 }
@@ -25,7 +23,7 @@ export const WeatherFormProvider: React.FC<{ children: React.ReactNode }> = ({
   const [inputMethod, setInputMethod] = useState<InputMethod>("cityName");
   const [cityName, setCityName] = useState("");
   const [coordinates, setCoordinates] = useState<Coordinates>(EmptyCoordinates);
-  const [shouldFetch, setShouldFetch] = useState(false);
+
   const [forecastDuration, setForecastDuration] =
     useState<ForecastDuration>("current");
 
@@ -38,8 +36,6 @@ export const WeatherFormProvider: React.FC<{ children: React.ReactNode }> = ({
         setCityName,
         coordinates,
         setCoordinates,
-        shouldFetch,
-        setShouldFetch,
         forecastDuration,
         setForecastDuration,
       }}
