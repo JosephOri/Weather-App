@@ -2,10 +2,10 @@ import { WeatherResponse } from "../../types/WeatherResponse";
 import { Box, Paper, Typography } from "@mui/material";
 
 interface Props {
-  weatherData: WeatherResponse;
+  data: WeatherResponse;
 }
 
-const CurrentWeather = ({ weatherData }: Props) => {
+const CurrentWeather = ({ data }: Props) => {
   return (
     <Paper elevation={2} className="md:p-6 md:px-8 opacity-90">
       <Box
@@ -20,17 +20,17 @@ const CurrentWeather = ({ weatherData }: Props) => {
             variant="h4"
             className="font-semibold text-[1.25rem] text-[#396bae] md:mb-4"
           >
-            {weatherData.name}
+            {data.name}
           </Typography>
           <Box className="flex">
             <img
-              src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-              alt={weatherData.weather[0].description}
+              src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+              alt={data.weather[0].description}
               className="w-16 h-16"
             />
             <span className="font-light text-[7rem] text-[#4a6fa1] ml-6 leading-none">
               <Typography variant="h3">
-                {Math.round(weatherData.main.temp)}°C
+                {Math.round(data.main.temp)}°C
               </Typography>
             </span>
           </Box>
@@ -42,13 +42,13 @@ const CurrentWeather = ({ weatherData }: Props) => {
         >
           <Box className="text-[1.25rem] text-[#4a6fa1]">
             <Typography className="text-[1.25rem] text-[#4a6fa1] md:py-1">
-              <strong>Humidity:</strong> {weatherData.main.humidity}%
+              <strong>Humidity:</strong> {data.main.humidity}%
             </Typography>
             <Typography className="text-[1.25rem] text-[#4a6fa1] md:py-1">
-              <strong>Wind Speed:</strong> {weatherData.wind.speed} m/s
+              <strong>Wind Speed:</strong> {data.wind.speed} m/s
             </Typography>
             <Typography className="text-[1.25rem] text-[#4a6fa1] md:py-1">
-              <strong>Conditions:</strong> {weatherData.weather[0].description}
+              <strong>Conditions:</strong> {data.weather[0].description}
             </Typography>
           </Box>
           <Box id="high-low-container" className="flex mb-8 w-[2rem]"></Box>
