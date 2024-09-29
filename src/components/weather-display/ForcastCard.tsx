@@ -5,7 +5,7 @@ interface Props {
   day: ForecastResponse["list"][0];
 }
 
-const WeatherCard = ({ day }: Props) => {
+const ForcastCard = ({ day }: Props) => {
   return (
     <Card className="shadow-md bg-inherit">
       <CardContent className="flex flex-col items-center">
@@ -34,4 +34,4 @@ const WeatherCard = ({ day }: Props) => {
   );
 };
 
-export default WeatherCard;
+export default ForcastCard;
