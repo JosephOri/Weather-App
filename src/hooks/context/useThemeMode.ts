@@ -1,12 +1,6 @@
-import { useContext } from "react";
 import { ThemeModeContext } from "../../context/ThemeModeContext";
+import { useAbstractContext } from "./useAbstractContext";
 
 export const useThemeMode = () => {
-  const context = useContext(ThemeModeContext);
-  if (context === undefined) {
-    throw new Error(
-      "useThemeMode must be used within a ThemeModeContextProvider"
-    );
-  }
-  return context;
+  return useAbstractContext(ThemeModeContext);
 };
