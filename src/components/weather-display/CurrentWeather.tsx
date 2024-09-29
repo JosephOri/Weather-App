@@ -1,11 +1,11 @@
 import { WeatherResponse } from "../../types/WeatherResponse";
 import { Box, Paper, Typography } from "@mui/material";
 
-interface CurrentWeatherProps {
+interface Props {
   weatherData: WeatherResponse;
 }
 
-const CurrentWeather = ({ weatherData }: CurrentWeatherProps) => {
+const CurrentWeather = ({ weatherData }: Props) => {
   return (
     <Paper elevation={2} className="md:p-6 md:px-8 opacity-90">
       <Box

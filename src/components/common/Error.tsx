@@ -1,13 +1,12 @@
-import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
-interface ErrorProps {
+interface Props {
   message: string;
   onRetry?: () => void;
 }
 
-const Error: React.FC<ErrorProps> = ({ message, onRetry }) => {
+const Error = ({ message, onRetry }: Props) => {
   return (
     <Box className="flex flex-col items-center justify-center mt-8">
       <ErrorOutlineIcon className="text-red-500" style={{ fontSize: 80 }} />

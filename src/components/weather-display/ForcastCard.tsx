@@ -2,11 +2,11 @@ import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 import { ForecastResponse } from "../../types/ForecastResponse";
 
-interface WeatherCardProps {
+interface Props {
   day: ForecastResponse["list"][0];
 }
 
-const WeatherCard: React.FC<WeatherCardProps> = ({ day }) => {
+const WeatherCard = ({ day }: Props) => {
   return (
     <Card className="shadow-md bg-inherit">
       <CardContent className="flex flex-col items-center">
