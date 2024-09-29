@@ -5,7 +5,7 @@ import { InputMethod } from "../../types/InputMethod";
 const InputMethodSelect = () => {
   const { inputMethod, setInputMethod } = useWeatherFormContext();
   return (
-    <FormControl variant="outlined" size="small" className="w-full md:w-1/2">
+    <FormControl variant="outlined" size="small" className="w-full md:w-1/4">
       <InputLabel id="input-method-label">Search By</InputLabel>
       <Select
         labelId="input-method-label"

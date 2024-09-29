@@ -48,16 +48,6 @@ export const lightTheme = createTheme({
         },
       },
     },
-    MuiInputBase: {
-      styleOverrides: {
-        input: {
-          color: "#727E8E",
-          "&::placeholder": {
-            color: "#6898d5",
-          },
-        },
-      },
-    },
     MuiSwitch: {
       styleOverrides: {
         switchBase: {
@@ -132,16 +122,6 @@ export const darkTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#051A33",
-        },
-      },
-    },
-    MuiInputBase: {
-      styleOverrides: {
-        input: {
-          color: "#5f8bbf",
-          "&::placeholder": {
-            color: "#235A84",
-          },
         },
       },
     },
