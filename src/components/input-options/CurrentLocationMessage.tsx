@@ -1,12 +1,12 @@
 import { Typography } from "@mui/material";
 import SearchButton from "./SearchButton";
-import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
+import useWeatherForm from "../../hooks/context/useWeatherForm";
 import { Coordinates } from "../../types/Coordinates";
 import { getCurrentLocation } from "../../utils/getCurrentLocation";
 import { toast } from "react-toastify";
 
 const CurrentLocationMessage = () => {
-  const { setCoordinates } = useWeatherFormContext();
+  const { setCoordinates } = useWeatherForm();
   const onLocationSearch = async () => {
     try {
       const currentCoords: Coordinates = await getCurrentLocation();

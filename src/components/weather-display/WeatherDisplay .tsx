@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { WeatherResponse } from "../../types/WeatherResponse";
 import { ForecastResponse } from "../../types/ForecastResponse";
-import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
+import useWeatherForm from "../../hooks/context/useWeatherForm";
 import WeatherCard from "./ForcastCard";
 import CurrentWeather from "./CurrentWeather";
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const WeatherDisplay = ({ weatherData }: Props) => {
-  const { forecastDuration } = useWeatherFormContext();
+  const { forecastDuration } = useWeatherForm();
 
   return (
     <Box className="mt-4 flex justify-center">

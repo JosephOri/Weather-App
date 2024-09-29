@@ -1,12 +1,12 @@
 import { Button, Box } from "@mui/material";
-import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
+import useWeatherForm from "../../hooks/context/useWeatherForm";
 
 interface SearchButtonProps {
   validateSearch: () => Promise<boolean>;
 }
 
 const SearchButton = ({ validateSearch }: SearchButtonProps) => {
-  const { setShouldFetch } = useWeatherFormContext();
+  const { setShouldFetch } = useWeatherForm();
   const handleClick = async () => {
     const isValid = await validateSearch();
     if (isValid) {

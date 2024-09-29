@@ -3,7 +3,7 @@ import React from "react";
 import HomePage from "./pages/HomePage";
 import { WeatherFormProvider } from "./context/WeatherFormContext";
 import { lightTheme, darkTheme } from "./theme/themes";
-import { useThemeMode } from "./hooks/context/useThemeModeContexs";
+import { useThemeMode } from "./hooks/context/useThemeMode";
 
 const App: React.FC = () => {
   const { isDarkMode } = useThemeMode();

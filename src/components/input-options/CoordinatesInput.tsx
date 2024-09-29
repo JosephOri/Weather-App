@@ -1,10 +1,10 @@
 import { TextField } from "@mui/material";
 import { toast } from "react-toastify";
-import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
+import useWeatherForm from "../../hooks/context/useWeatherForm";
 import SearchButton from "./SearchButton";
 
 const CoordinatesInput = () => {
-  const { coordinates, setCoordinates } = useWeatherFormContext();
+  const { coordinates, setCoordinates } = useWeatherForm();
   const onCoordinatesSearch = async () => {
     if (!coordinates.lat || !coordinates.long) {
       toast.error("Please enter both latitude and longitude.");

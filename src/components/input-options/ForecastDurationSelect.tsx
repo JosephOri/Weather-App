@@ -1,9 +1,9 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
+import useWeatherForm from "../../hooks/context/useWeatherForm";
 import { ForecastDuration } from "../../types/ForecastDuration";
 
 const ForecastDurationSelect = () => {
-  const { forecastDuration, setForecastDuration } = useWeatherFormContext();
+  const { forecastDuration, setForecastDuration } = useWeatherForm();
 
   return (
     <FormControl variant="outlined" size="small" className="w-full md:w-1/4">

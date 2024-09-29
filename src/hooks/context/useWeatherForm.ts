@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { WeatherFormContext } from "../../context/WeatherFormContext";
 import { WeatherFormContextType } from "../../context/WeatherFormContext";
 
-function useWeatherFormContext(): WeatherFormContextType {
+function useWeatherForm(): WeatherFormContextType {
   const context = useContext(WeatherFormContext);
   if (!context) {
     throw new Error("useWeatherContext must be used within a WeatherProvider");
@@ -10,4 +10,4 @@ function useWeatherFormContext(): WeatherFormContextType {
   return context;
 }
 
-export default useWeatherFormContext;
+export default useWeatherForm;
