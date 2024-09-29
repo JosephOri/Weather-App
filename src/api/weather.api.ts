@@ -10,18 +10,18 @@ export const getWeatherData = async (
   forecastDuration: ForecastDuration
 ) => {
   let url = "";
+  let response;
 
   params.appid = apiKey;
   params.units = "metric";
 
   if (forecastDuration === "current") {
     url = `${baseUrl}/weather`;
-    const response = await axios.get<WeatherResponse>(url, { params });
-    return response.data;
+    response = await axios.get<WeatherResponse>(url, { params });
   } else {
     url = `${baseUrl}/forecast`;
     params.cnt = forecastDuration === "3-day" ? 3 : 7;
-    const response = await axios.get<ForecastResponse>(url, { params });
-    return response.data;
+    response = await axios.get<ForecastResponse>(url, { params });
   }
+  return response.data;
 };
