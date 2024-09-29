@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import WeatherInputForm from "../components/WeatherInputForm";
-import { useWeatherData } from "../hooks/useWeatherData";
+import { useWeatherQuery } from "../hooks/useWeatherQuery";
 import WeatherDisplay from "../components/weather-display/WeatherDisplay ";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,7 +13,7 @@ import { Box } from "@mui/material";
 const HomePage = () => {
   const { shouldFetch, setShouldFetch } = useWeatherForm();
 
-  const { data: weatherData, isLoading, isError, refetch } = useWeatherData();
+  const { data: weatherData, isLoading, isError, refetch } = useWeatherQuery();
 
   useEffect(() => {
     if (shouldFetch) {

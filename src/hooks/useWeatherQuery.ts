@@ -2,7 +2,7 @@ import useWeatherForm from "./context/useWeatherForm";
 import { useQuery } from "@tanstack/react-query";
 import { getWeatherData } from "../api/weather.api";
 
-export const useWeatherData = () => {
+export const useWeatherQuery = () => {
   const { inputMethod, cityName, coordinates, forecastDuration, shouldFetch } =
     useWeatherForm();
 
