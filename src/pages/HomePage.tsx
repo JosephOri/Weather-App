@@ -9,15 +9,16 @@ import { useWeatherData } from "../hooks/context/useWeatherData";
 import { Box } from "@mui/material";
 
 const HomePage = () => {
-  const { isLoading, isError, data: weatherData,refetch } = useWeatherData();
-
+  const { isLoading, isError, data: weatherData, refetch } = useWeatherData();
 
   return (
-    <Box className="px-5">
+    <Box className="px-5 md:px-10">
       <Header />
       <WeatherInputForm />
       {isLoading && <Loading message="Fetching weather data..." />}
-      {isError && <Error message="Unable to fetch weather data." onRetry={refetch}/>}
+      {isError && (
+        <Error message="Unable to fetch weather data." onRetry={refetch} />
+      )}
       {weatherData && <WeatherDisplay />}
       <ToastContainer />
     </Box>
