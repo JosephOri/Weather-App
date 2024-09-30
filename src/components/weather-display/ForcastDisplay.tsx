@@ -15,8 +15,8 @@ const ForcastDisplay = () => {
         </Typography>
       </Box>
       <Box className="flex flex-wrap justify-center gap-1">
-        {forecastData.list.map((day, index) => (
-          <ForcastCard day={day} key={index} />
+        {forecastData.list.map((interval, index) => (
+          <ForcastCard interval={interval} key={index} />
         ))}
       </Box>
     </Box>
