@@ -2,11 +2,12 @@ import axios from "axios";
 import { WeatherResponse } from "../types/WeatherResponse";
 import { ForecastResponse } from "../types/ForecastResponse";
 import { ForecastDuration } from "../types/ForecastDuration";
+import { UrlParams } from "@/types/UrlParams";
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
 export const getWeatherData = async (
-  params: any,
+  params: UrlParams,
   forecastDuration: ForecastDuration
 ) => {
   let url = "";
