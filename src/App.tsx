@@ -1,6 +1,6 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
-import HomePage from "./pages/HomePage";
+import HomePage from "./app/HomePage";
 import { WeatherFormProvider } from "./context/WeatherFormContext";
 import { lightTheme, darkTheme } from "./theme/themes";
 import { useThemeMode } from "./hooks/context/useThemeMode";
