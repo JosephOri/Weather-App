@@ -20,7 +20,7 @@ export const useWeatherQuery = () => {
     const queryKey = [];
     queryKey.push(inputMethod);
     if (inputMethod === "cityName") {
-      queryKey.push(cityName);
+      queryKey.push(cityName.trim());
     } else {
       queryKey.push(coordinates.lat, coordinates.long);
     }

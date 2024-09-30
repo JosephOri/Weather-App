@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-import lightBg from "../assets/bg.svg";
 import darkBg from "../assets/darkBg.svg";
 
 export const lightTheme = createTheme({
@@ -29,12 +28,11 @@ export const lightTheme = createTheme({
         body: {
           height: "100%",
           minHeight: "100vh",
-          backgroundImage: `url(${lightBg})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundColor: "#F9FFFF",
-          background: `linear-gradient(180deg, #F9FFFF 0%, #38C8E6 100%)`,
+          background: `linear-gradient(90deg, rgba(249,255,255,1) 0%, rgba(56,200,230,1) 61%)`,
         },
         "#root": {
           height: "100%",
