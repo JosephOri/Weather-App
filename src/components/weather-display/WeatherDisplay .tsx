@@ -7,7 +7,7 @@ const WeatherDisplay = () => {
   const { forecastDuration } = useWeatherForm();
 
   return (
-    <Box className="mt-10 flex flex-wrap justify-center">
+    <Box className="mt-10 flex flex-wrap md:justify-center">
       {forecastDuration === "current" ? <CurrentWeather /> : <ForcastDisplay />}
     </Box>
   );
