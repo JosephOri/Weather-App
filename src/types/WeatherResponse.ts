@@ -1,4 +1,4 @@
-export type WeatherResponse = {
+export type CurrentWeatherResponse = {
   coord: {
     lat: number;
     lon: number;

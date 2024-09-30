@@ -1,10 +1,10 @@
 import { useWeatherData } from "../../hooks/context/useWeatherData";
-import { WeatherResponse } from "../../types/WeatherResponse";
+import { CurrentWeatherResponse } from "../../types/WeatherResponse";
 import { Box, Paper, Typography } from "@mui/material";
 
 const CurrentWeather = () => {
   const { data } = useWeatherData();
-  const currentWeatherData = data as WeatherResponse;
+  const currentWeatherData = data as CurrentWeatherResponse;
   return (
     <Paper elevation={2} className="md:p-6 md:px-8 opacity-90 ">
       <Box

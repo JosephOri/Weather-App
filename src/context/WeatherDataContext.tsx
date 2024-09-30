@@ -1,10 +1,10 @@
 import { createContext } from "react";
 import { useWeatherQuery } from "../hooks/useWeatherQuery";
 import { ForecastResponse } from "../types/ForecastResponse";
-import { WeatherResponse } from "../types/WeatherResponse";
+import { CurrentWeatherResponse } from "../types/WeatherResponse";
 
 export interface WeatherDataContextType {
-  data?: WeatherResponse | ForecastResponse;
+  data?: CurrentWeatherResponse | ForecastResponse;
   isError: boolean;
   isLoading: boolean;
   refetch: () => void;
