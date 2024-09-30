@@ -8,7 +8,7 @@ interface Props {
 const ForcastCard = ({ day }: Props) => {
   return (
     <Card elevation={3} className="shadow-md bg-inherit">
-      <CardContent className="flex flex-col ">
+      <CardContent className="flex flex-col gap-1">
         <Typography variant="h6">
           {new Date(day.dt * 1000).toLocaleDateString()}
         </Typography>

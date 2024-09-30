@@ -67,6 +67,28 @@ export const lightTheme = createTheme({
         },
       },
     },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "#727E8E",
+          "&.Mui-focused": {
+            color: "#727E8E",
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiInputBase-root": {
+            color: "#727E8E",
+          },
+          "& .MuiOutlinedInput-root": {
+            borderRadius: "20px",
+          },
+        },
+      },
+    },
   },
   typography: {
     h6: {
@@ -150,6 +172,15 @@ export const darkTheme = createTheme({
           color: "#7eaed2",
           "&.Mui-focused": {
             color: "#7eaed2",
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-root": {
+            borderRadius: "20px",
           },
         },
       },
