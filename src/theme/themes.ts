@@ -89,6 +89,18 @@ export const lightTheme = createTheme({
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-root": {
+            borderRadius: "20px",
+          },
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderRadius: "20px",
+          },
+        },
+      },
+    },
   },
   typography: {
     h6: {
@@ -180,6 +192,18 @@ export const darkTheme = createTheme({
       styleOverrides: {
         root: {
           "& .MuiOutlinedInput-root": {
+            borderRadius: "20px",
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-root": {
+            borderRadius: "20px",
+          },
+          "& .MuiOutlinedInput-notchedOutline": {
             borderRadius: "20px",
           },
         },
