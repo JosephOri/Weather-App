@@ -1,5 +1,5 @@
-import { useWeatherData } from "../../hooks/context/useWeatherData";
-import { CurrentWeatherResponse } from "../../types/WeatherResponse";
+import { useWeatherData } from "../../../hooks/context/useWeatherData";
+import { CurrentWeatherResponse } from "../../../types/WeatherResponse";
 import { Box, Paper, Typography } from "@mui/material";
 
 const CurrentWeather = () => {
