@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CurrentWeatherResponse } from "../types/WeatherResponse";
+import { WeatherResponse } from "../types/WeatherResponse";
 import { ForecastResponse } from "../types/ForecastResponse";
 import { ForecastDuration } from "../types/ForecastDuration";
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
@@ -17,7 +17,7 @@ export const getWeatherData = async (
 
   if (forecastDuration === "current") {
     url = `${baseUrl}/weather`;
-    response = await axios.get<CurrentWeatherResponse>(url, { params });
+    response = await axios.get<WeatherResponse>(url, { params });
   } else {
     url = `${baseUrl}/forecast`;
     params.cnt = forecastDuration === "3-day" ? 3 : 7;

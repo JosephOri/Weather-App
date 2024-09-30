@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { useThemeMode } from "../../hooks/context/useThemeMode";
+import { useThemeMode } from "@hooks/context/useThemeMode";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 const Header = () => {

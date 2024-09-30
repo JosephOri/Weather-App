@@ -1,4 +1,4 @@
-import { ThemeModeContext } from "../../context/ThemeModeContext";
+import { ThemeModeContext } from "@/context/ThemeModeContext";
 import { useAbstractContext } from "./useAbstractContext";
 
 export const useThemeMode = () => {

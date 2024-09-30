@@ -1,15 +1,15 @@
-import { useWeatherData } from "../../../hooks/context/useWeatherData";
-import { CurrentWeatherResponse } from "../../../types/WeatherResponse";
+import { useWeatherData } from "@hooks/context/useWeatherData";
+import { WeatherResponse } from "@/types/WeatherResponse";
 import { Box, Paper, Typography } from "@mui/material";
 
 const CurrentWeather = () => {
   const { data } = useWeatherData();
-  const currentWeatherData = data as CurrentWeatherResponse;
+  const currentWeatherData = data as WeatherResponse;
   return (
-    <Paper elevation={2} className="md:p-6 md:px-8 opacity-90 ">
+    <Paper elevation={2} className="md:p-6 md:px-8 opacity-90">
       <Box
         id="weather-container"
-        className="flex flex-wrap justify-center rounded-xl md:justify-start py-5 md:py-0"
+        className="flex flex-wrap justify-center md:justify-start py-5 md:py-0"
       >
         <Box
           id="weather-status"

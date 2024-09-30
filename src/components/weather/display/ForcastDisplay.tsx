@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import ForcastCard from "./ForcastCard";
-import { ForecastResponse } from "../../../types/ForecastResponse";
-import { useWeatherData } from "../../../hooks/context/useWeatherData";
+import { ForecastResponse } from "@/types/ForecastResponse";
+import { useWeatherData } from "@/hooks/context/useWeatherData";
 
 const ForcastDisplay = () => {
   const { data } = useWeatherData();

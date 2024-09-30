@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material";
 import SearchButton from "./SearchButton";
-import useWeatherForm from "../../../hooks/context/useWeatherForm";
-import { Coordinates } from "../../../types/Coordinates";
-import { getCurrentLocation } from "../../../utils/getCurrentLocation";
+import useWeatherForm from "@/hooks/context/useWeatherForm";
+import { Coordinates } from "@/types/Coordinates";
+import { getCurrentLocation } from "@/utils/getCurrentLocation";
 import { toast } from "react-toastify";
 
 const CurrentLocationMessage = () => {

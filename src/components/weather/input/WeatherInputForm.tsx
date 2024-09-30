@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import useWeatherForm from "../../../hooks/context/useWeatherForm";
+import useWeatherForm from "@/hooks/context/useWeatherForm";
 import CityNameInput from "./CityNameInput";
 import CoordinatesInput from "./CoordinatesInput";
 import CurrentLocationMessage from "./CurrentLocationMessage";
