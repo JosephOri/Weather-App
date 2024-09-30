@@ -101,6 +101,13 @@ export const lightTheme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "20px",
+        },
+      },
+    },
   },
   typography: {
     h6: {
@@ -175,6 +182,13 @@ export const darkTheme = createTheme({
             backgroundColor: "#183553",
           },
           borderBottom: "1px solid #356097",
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "20px",
         },
       },
     },
