@@ -1,7 +1,7 @@
 import {
   WeatherDataContext,
   WeatherDataContextType,
-} from "../../context/WeatherDataContext";
+} from "@/context/WeatherDataContext";
 import { useAbstractContext } from "./useAbstractContext";
 
 export const useWeatherData = (): WeatherDataContextType => {

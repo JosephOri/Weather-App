@@ -1,5 +1,5 @@
-import { WeatherFormContext } from "../../context/WeatherFormContext";
-import { WeatherFormContextType } from "../../context/WeatherFormContext";
+import { WeatherFormContext } from "@/context/WeatherFormContext";
+import { WeatherFormContextType } from "@/context/WeatherFormContext";
 import { useAbstractContext } from "./useAbstractContext";
 
 function useWeatherForm(): WeatherFormContextType {

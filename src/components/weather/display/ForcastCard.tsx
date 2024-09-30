@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography } from "@mui/material";
-import { ForecastResponse } from "../../types/ForecastResponse";
+import { ForecastResponse } from "@/types/ForecastResponse";
 
 interface Props {
   interval: ForecastResponse["list"][0];

@@ -208,6 +208,9 @@ export const darkTheme = createTheme({
           "& .MuiOutlinedInput-root": {
             borderRadius: "20px",
           },
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#7eaed2",
+          },
         },
       },
     },

@@ -1,10 +1,12 @@
 import { Box } from "@mui/material";
-import useWeatherForm from "../hooks/context/useWeatherForm";
-import CityNameInput from "./input-options/CityNameInput";
-import CoordinatesInput from "./input-options/CoordinatesInput";
-import CurrentLocationMessage from "./input-options/CurrentLocationMessage";
-import ForecastDurationSelect from "./input-options/ForecastDurationSelect";
-import InputMethodSelect from "./input-options/InputMethodSelect";
+import useWeatherForm from "@/hooks/context/useWeatherForm";
+import {
+  CityNameInput,
+  CoordinatesInput,
+  CurrentLocationMessage,
+  ForecastDurationSelect,
+  InputMethodSelect,
+} from "./";
 
 const WeatherInputForm = () => {
   const { inputMethod } = useWeatherForm();

@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import useWeatherForm from "../../hooks/context/useWeatherForm";
-import { InputMethod } from "../../types/InputMethod";
+import useWeatherForm from "@/hooks/context/useWeatherForm";
+import { InputMethod } from "@/types/InputMethod";
 
 const InputMethodSelect = () => {
   const { inputMethod, setInputMethod } = useWeatherForm();

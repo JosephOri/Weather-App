@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import useWeatherForm from "../../hooks/context/useWeatherForm";
+import useWeatherForm from "@hooks/context/useWeatherForm";
 import CurrentWeather from "./CurrentWeather";
 import ForcastDisplay from "./ForcastDisplay";
 
