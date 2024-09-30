@@ -1,11 +1,10 @@
-import React from "react";
 import { Box, CircularProgress, Typography } from "@mui/material";
 
-interface LoadingProps {
+interface Props {
   message?: string;
 }
 
-const Loading: React.FC<LoadingProps> = ({ message }) => {
+const Loading = ({ message }: Props) => {
   return (
     <Box className="flex flex-col items-center justify-center mt-8">
       <CircularProgress size={60} className="text-blue-500" />

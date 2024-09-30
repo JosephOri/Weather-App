@@ -1,11 +1,11 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
+import useWeatherForm from "../../hooks/context/useWeatherForm";
 import { InputMethod } from "../../types/InputMethod";
 
 const InputMethodSelect = () => {
-  const { inputMethod, setInputMethod } = useWeatherFormContext();
+  const { inputMethod, setInputMethod } = useWeatherForm();
   return (
-    <FormControl variant="outlined" size="small" className="w-full md:w-1/2">
+    <FormControl variant="outlined" size="small" className="w-full md:w-1/4">
       <InputLabel id="input-method-label">Search By</InputLabel>
       <Select
         labelId="input-method-label"

@@ -1,13 +1,17 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
 
 interface ThemeModeContextType {
   isDarkMode: boolean;
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const ThemeModeContext = createContext<ThemeModeContextType | undefined>(undefined);
+export const ThemeModeContext = createContext<ThemeModeContextType | undefined>(
+  undefined
+);
 
-export const ThemeModeContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ThemeModeProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
@@ -16,4 +20,3 @@ export const ThemeModeContextProvider: React.FC<{ children: React.ReactNode }> =
     </ThemeModeContext.Provider>
   );
 };
-

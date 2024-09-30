@@ -1,20 +1,20 @@
 import { Button, Box } from "@mui/material";
-import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
+import { useWeatherData } from "../../hooks/context/useWeatherData";
 
 interface SearchButtonProps {
   validateSearch: () => Promise<boolean>;
 }
 
 const SearchButton = ({ validateSearch }: SearchButtonProps) => {
-  const { setShouldFetch } = useWeatherFormContext();
+  const { refetch } = useWeatherData();
   const handleClick = async () => {
     const isValid = await validateSearch();
     if (isValid) {
-      setShouldFetch(true);
+      refetch();
     }
   };
   return (
-    <Box className="flex-grow">
+    <Box className="flex-grow items-center">
       <Button variant="contained" color="primary" onClick={handleClick}>
         search
       </Button>

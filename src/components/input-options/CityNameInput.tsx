@@ -1,10 +1,10 @@
 import { TextField } from "@mui/material";
 import { toast } from "react-toastify";
-import useWeatherFormContext from "../../hooks/context/useWeatherFormContext";
+import useWeatherForm from "../../hooks/context/useWeatherForm";
 import SearchButton from "./SearchButton";
 
 const CityNameInput = () => {
-  const { cityName, setCityName } = useWeatherFormContext();
+  const { cityName, setCityName } = useWeatherForm();
 
   const onCitySearch = async () => {
     let isValid = true;

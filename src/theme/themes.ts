@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-import lightBg from "../assets/bg.svg";
 import darkBg from "../assets/darkBg.svg";
 
 export const lightTheme = createTheme({
@@ -28,16 +27,15 @@ export const lightTheme = createTheme({
         },
         body: {
           height: "100%",
-          minHeight: "100vh", 
-          backgroundImage: `url(${lightBg})`,
+          minHeight: "100vh",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundColor: "#F9FFFF",
-          background: `linear-gradient(to bottom, #f0f0f0, #38C8E6) no-repeat`,
+          background: `linear-gradient(90deg, rgba(249,255,255,1) 0%, rgba(56,200,230,1) 61%)`,
         },
         "#root": {
-          height: "100%", 
+          height: "100%",
         },
       },
     },
@@ -45,16 +43,6 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#FFFFFF",
-        },
-      },
-    },
-    MuiInputBase: {
-      styleOverrides: {
-        input: {
-          color: "#727E8E",
-          "&::placeholder": {
-            color: "#6898d5",
-          },
         },
       },
     },
@@ -76,6 +64,47 @@ export const lightTheme = createTheme({
             backgroundColor: "#f9f9f9",
           },
           borderBottom: "1px solid #ccc",
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "#727E8E",
+          "&.Mui-focused": {
+            color: "#727E8E",
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiInputBase-root": {
+            color: "#727E8E",
+          },
+          "& .MuiOutlinedInput-root": {
+            borderRadius: "20px",
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-root": {
+            borderRadius: "20px",
+          },
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderRadius: "20px",
+          },
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "20px",
         },
       },
     },
@@ -135,16 +164,6 @@ export const darkTheme = createTheme({
         },
       },
     },
-    MuiInputBase: {
-      styleOverrides: {
-        input: {
-          color: "#5f8bbf",
-          "&::placeholder": {
-            color: "#235A84",
-          },
-        },
-      },
-    },
     MuiSwitch: {
       styleOverrides: {
         switchBase: {
@@ -166,7 +185,46 @@ export const darkTheme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "20px",
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "#7eaed2",
+          "&.Mui-focused": {
+            color: "#7eaed2",
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-root": {
+            borderRadius: "20px",
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-root": {
+            borderRadius: "20px",
+          },
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderRadius: "20px",
+          },
+        },
+      },
+    },
   },
+
   typography: {
     h6: {
       color: "#2F5D8A",
