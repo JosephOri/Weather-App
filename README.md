@@ -15,3 +15,29 @@ VITE_API_BASE_URL=https://api.openweathermap.org/data/2.5
 
 4. Run the app with `npm run dev`
 
+## Tech Stack
+
+- React
+- Vite
+- TailwindCSS
+- React Query
+- Axios
+- React Router
+- React Toastify
+- React Context Devtool
+- React Dark Mode Toggle
+- MUI
+
+## Features
+
+- Search for a city
+- View the weather data for the city
+- View the forecast for the city
+- View the current location
+- Dark mode
+- Responsive design
+
+
+## Live Demo
+
+https://weather-app-josephori.netlify.app/
